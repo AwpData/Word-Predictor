@@ -14,13 +14,16 @@ while True:
         break
 
 unique_words = set()
+bigrams = list()
 words = WhitespaceTokenizer().tokenize(file.read())
 for word in words:
     unique_words.add(word)
-
+for i in range(0, len(words) - 1):
+    bigrams.append([words[i], words[i + 1]])
 print("Corpus statistics")
 print("All tokens: " + str(len(words)))
 print("Unique tokens: " + str(len(unique_words)))
+print("Number of bigrams: " + str(len(bigrams)))
 
 while True:
     try:
@@ -33,5 +36,9 @@ while True:
     else:
         try:
             print(words[index])
+            if index < 0:
+                print("Head: {}\tTail: {}".format(words[index - 1], words[index]))
+            else:
+                print("Head: {}\tTail: {}".format(words[index], words[index + 1]))
         except IndexError:
             print("Index Error. Please input an integer that is in the range of the corpus.")
