@@ -1,4 +1,4 @@
 # Word-Predictor
 
 <h1>Directions</h1>
-<li>Supply your own <b>corpus.txt</b> and watch as 10 random sentences generate</li>
+<li>You can replace the text in <b>corpus.txt</b> if you want to generate different sentences.</li>
